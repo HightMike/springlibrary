@@ -34,22 +34,22 @@ public class BookService implements BasicService<Book> {
 
     @Override
     public Book save(Book obj) {
-        return bookRepository.
+        return null;
     }
 
     @Override
     public void delete(Book object) {
-        return bookRepository.delete(object);
+
 
     }
 
-    List<Book> search (String... searchString) {
+    public List<Book> search (String... searchString) {
         return bookRepository.findAll();
     }
 
 
     List<Book> findTopBooks (int limit) {
-        return bookRepository.
+        return null;
     }
 
 }

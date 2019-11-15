@@ -30,12 +30,12 @@ public class PublisherService implements BasicService<Publisher>{
 
     @Override
     public Publisher save(Publisher obj) {
-        return publisherRepository.
+        return null;
     }
 
     @Override
     public void delete(Publisher object) {
-        return publisherRepository.delete(object);
+
     }
 
     public List<Publisher> search(String... searchString) {

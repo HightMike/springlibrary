@@ -26,7 +26,12 @@ public class AuthorService implements BasicService<Author>{
 
     @Override
     public Author get(long id) {
-        return authorRepository.getOne(String.valueOf(id));
+        return authorRepository.findById(id).get();
+    }
+
+    @Override
+    public List<Author> search(String... searchString) {
+        return null;
     }
 
     @Override
@@ -34,8 +39,13 @@ public class AuthorService implements BasicService<Author>{
         return null;
     }
 
+
+    public List<Author> findByFio(String fio) {
+        return authorRepository.findByFioContainingIgnoreCaseOrderByFio(fio);
+    }
+
     @Override
     public void delete(Author object) {
-        return authorRepository.delete(object);
+
     }
 }

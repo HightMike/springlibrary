@@ -21,18 +21,23 @@ public class GenreService implements BasicService<Genre> {
     }
 
     @Override
+    public List<Genre> search(String... searchString) {
+        return null;
+    }
+
+    @Override
     public Genre get(long id){
         return genreRepository.getOne(String.valueOf(id));
     }
 
     @Override
     public Genre save(Genre obj) {
-        return genreRepository.
+        return null;
     }
 
     @Override
     public void delete(Genre object) {
-        return genreRepository.delete(object);
+
     }
 
 }

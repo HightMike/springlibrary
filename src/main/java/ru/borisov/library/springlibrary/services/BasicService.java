@@ -10,6 +10,7 @@ import java.util.List;
 public interface BasicService<T> {
 
     public List<T> getall();
+    public List<T> search(String... searchString);
 
     public T get(long id);
 
