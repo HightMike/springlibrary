@@ -25,7 +25,7 @@ public class PublisherService implements BasicService<Publisher>{
 
     @Override
     public Publisher get(long id){
-        return publisherRepository.getOne(String.valueOf(id));
+        return publisherRepository.getOne(id);
     }
 
     @Override
@@ -42,5 +42,8 @@ public class PublisherService implements BasicService<Publisher>{
         return publisherRepository.findAll();
     }
 
+    public List<Publisher> findByName(String name) {
+        return publisherRepository.findByNameContainingIgnoreCaseOrderByName(name);
+    }
 
 }

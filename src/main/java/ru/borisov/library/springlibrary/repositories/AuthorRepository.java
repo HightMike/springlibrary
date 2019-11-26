@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long> {
 
-    List<Author> findByFioContainingIgnoreCaseOrderByFio (String fio);
+    List<Author> findByFioContainingIgnoreCaseOrderByFio (String fio); // дополнительный метод (помимо Crud операций, дописываем такой)
 
 }
 

@@ -26,8 +26,10 @@ public class Author {
     @Id
     private Long id;
 
+    @Column(name="fio")
     private String fio;
 
+    @Column(name="birthday")
     private Date birthday;
 
     @Basic(fetch = FetchType.LAZY)

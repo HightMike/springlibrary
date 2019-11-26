@@ -29,7 +29,7 @@ public class BookService implements BasicService<Book> {
     }
     @Override
     public Book get(long id){
-        return bookRepository.getOne(String.valueOf(id));
+        return bookRepository.getOne(id);
     }
 
     @Override
@@ -40,7 +40,10 @@ public class BookService implements BasicService<Book> {
     @Override
     public void delete(Book object) {
 
+    }
 
+    public List<Book> getBookByNOrA(String name, String fio) {
+        return bookRepository.findByNameContainingIgnoreCaseOrAuthorFioContainingIgnoreCaseOrderByName(name, fio);
     }
 
     public List<Book> search (String... searchString) {

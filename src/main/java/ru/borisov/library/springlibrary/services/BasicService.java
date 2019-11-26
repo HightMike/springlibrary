@@ -1,21 +1,16 @@
 package ru.borisov.library.springlibrary.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import ru.borisov.library.springlibrary.entities.Author;
-import ru.borisov.library.springlibrary.entities.Book;
-import ru.borisov.library.springlibrary.entities.Genre;
-
 import java.util.List;
 
 public interface BasicService<T> {
 
-    public List<T> getall();
-    public List<T> search(String... searchString);
+    List<T> getall();
+    List<T> search(String... searchString);
 
-    public T get(long id);
+    T get(long id);
 
-    public T save(T obj);
+    T save(T obj);
 
-    public void delete(T object);
+    void delete(T object);
 
 }

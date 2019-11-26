@@ -1,6 +1,7 @@
 package ru.borisov.library.springlibrary.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import ru.borisov.library.springlibrary.entities.Author;
 import ru.borisov.library.springlibrary.entities.Genre;
 import ru.borisov.library.springlibrary.repositories.GenreRepository;
 
@@ -27,7 +28,7 @@ public class GenreService implements BasicService<Genre> {
 
     @Override
     public Genre get(long id){
-        return genreRepository.getOne(String.valueOf(id));
+        return genreRepository.getOne(id);
     }
 
     @Override
@@ -38,6 +39,10 @@ public class GenreService implements BasicService<Genre> {
     @Override
     public void delete(Genre object) {
 
+    }
+
+    public List<Genre> findByName(String name) {
+        return genreRepository.findByNameContainingIgnoreCaseOrderByName(name);
     }
 
 }

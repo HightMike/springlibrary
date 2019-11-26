@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.borisov.library.springlibrary.entities.Author;
 import ru.borisov.library.springlibrary.services.AuthorService;
+import ru.borisov.library.springlibrary.services.BookService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +20,9 @@ public class MainController {
 
     @Autowired
     private AuthorService authorService;
+
+    @Autowired
+    private BookService bookService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String baseUrlRedirect(HttpServletRequest request, HttpServletResponse httpServletResponse) {
