@@ -20,7 +20,7 @@ public class Book {
 
     public Book() {
     }
-
+// без заполнения поля content
     public Book(Long id, String name, Integer pageCount, String isbn, Genre genre, Author author, Publisher publisher, Integer publishYear, byte[] image, String descr, long viewCount, long totalRating, long totalVoteCount, int avgRating) {
         this.id = id;
         this.name = name;

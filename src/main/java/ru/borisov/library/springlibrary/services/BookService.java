@@ -1,6 +1,8 @@
 package ru.borisov.library.springlibrary.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ru.borisov.library.springlibrary.entities.Author;
 import ru.borisov.library.springlibrary.entities.Book;
@@ -50,6 +52,9 @@ public class BookService implements BasicService<Book> {
         return bookRepository.findAll();
     }
 
+    public Page<Book> geBookListWK(Pageable pageable) {
+        return bookRepository.findAllWithoutContent(pageable);
+    }
 
     List<Book> findTopBooks (int limit) {
         return null;

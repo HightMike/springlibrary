@@ -1,6 +1,8 @@
 package ru.borisov.library.springlibrary.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ru.borisov.library.springlibrary.entities.Author;
 import ru.borisov.library.springlibrary.entities.Genre;
@@ -42,6 +44,10 @@ public class AuthorService implements BasicService<Author>{
 
     public List<Author> findByFio(String fio) {
         return authorRepository.findByFioContainingIgnoreCaseOrderByFio(fio);
+    }
+
+    public Page<Author> getPageList(String fio, Pageable pageable) {
+        return authorRepository.findByFioContainingIgnoreCaseOrderByFio(fio, pageable);
     }
 
     @Override
