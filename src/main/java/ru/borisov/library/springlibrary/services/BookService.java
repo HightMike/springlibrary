@@ -40,8 +40,12 @@ public class BookService implements BasicService<Book> {
     }
 
     @Override
-    public Book save(Book obj) {
-        return null;
+    public Book save(Book book) {
+        bookRepository.save(book);
+        if (book.getContent()!=null) {
+            bookRepository.updateContent(book.getContent(), book.getId());
+        }
+        return book;
     }
 
     @Override

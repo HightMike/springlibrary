@@ -16,6 +16,7 @@ import ru.borisov.library.springlibrary.services.BookService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -36,8 +37,18 @@ public class MainController {
 
 //        Page<Book> bookPage = bookService.geBookListWK(PageRequest.of(0,10, Sort.Direction.ASC, "name"));
 
-        Page<Book> bookPage = bookService.getBookRepository().findByGenre(15,PageRequest.of(0,10, Sort.Direction.ASC, "name"));
-        return "ok";
+//        Page<Book> bookPage = bookService.getBookRepository().findByGenre(15,PageRequest.of(0,10, Sort.Direction.ASC, "name"));
+//        return "ok";
+
+        Page<Author> authorPage = authorService.getPageList("д", PageRequest.of(0,10, Sort.Direction.ASC, "fio"));
+
+        Author author = new Author();
+        author.setFio("Сорокин Тестовый1");
+        author.setBirthday(new Date(1996L));
+
+        Author checkAuthor = authorService.save(author);
+
+        return  "ok";
 
     }
 

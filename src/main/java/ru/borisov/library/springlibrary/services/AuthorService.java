@@ -2,6 +2,7 @@ package ru.borisov.library.springlibrary.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -37,8 +38,8 @@ public class AuthorService implements BasicService<Author>{
     }
 
     @Override
-    public Author save(Author obj) {
-        return null;
+    public Author save(Author author) {
+        return authorRepository.save(author);
     }
 
 
@@ -66,7 +67,7 @@ public class AuthorService implements BasicService<Author>{
 
     @Override
     public Page<Author> getAll(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection) {
-        return null;
+        return authorRepository.findAll(PageRequest.of(pageNumber,pageSize,sortDirection,sortField));
     }
 
     @Override

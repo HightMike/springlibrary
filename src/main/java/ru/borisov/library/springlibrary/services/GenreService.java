@@ -3,12 +3,14 @@ package ru.borisov.library.springlibrary.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 import ru.borisov.library.springlibrary.entities.Author;
 import ru.borisov.library.springlibrary.entities.Genre;
 import ru.borisov.library.springlibrary.repositories.GenreRepository;
 
 import java.util.List;
 
+@Service
 public class GenreService implements BasicService<Genre> {
 
     private GenreRepository genreRepository;
