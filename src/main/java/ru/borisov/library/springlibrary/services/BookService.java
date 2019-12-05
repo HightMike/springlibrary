@@ -3,6 +3,7 @@ package ru.borisov.library.springlibrary.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.borisov.library.springlibrary.entities.Author;
 import ru.borisov.library.springlibrary.entities.Book;
@@ -19,6 +20,10 @@ public class BookService implements BasicService<Book> {
 
     public BookService() {
         super();
+    }
+
+    public BookRepository getBookRepository() {
+        return bookRepository;
     }
 
     @Autowired
@@ -57,6 +62,21 @@ public class BookService implements BasicService<Book> {
     }
 
     List<Book> findTopBooks (int limit) {
+        return null;
+    }
+
+    @Override
+    public List<Book> getAll(Sort sort) {
+        return null;
+    }
+
+    @Override
+    public Page<Book> getAll(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection) {
+        return null;
+    }
+
+    @Override
+    public Page<Book> search(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection, String... searchString) {
         return null;
     }
 

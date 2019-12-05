@@ -3,9 +3,9 @@ package ru.borisov.library.springlibrary.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.borisov.library.springlibrary.entities.Author;
-import ru.borisov.library.springlibrary.entities.Genre;
 import ru.borisov.library.springlibrary.repositories.AuthorRepository;
 
 import java.util.List;
@@ -53,5 +53,24 @@ public class AuthorService implements BasicService<Author>{
     @Override
     public void delete(Author object) {
 
+    }
+
+    public AuthorService() {
+        super();
+    }
+
+    @Override
+    public List<Author> getAll(Sort sort) {
+        return null;
+    }
+
+    @Override
+    public Page<Author> getAll(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection) {
+        return null;
+    }
+
+    @Override
+    public Page<Author> search(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection, String... searchString) {
+        return null;
     }
 }

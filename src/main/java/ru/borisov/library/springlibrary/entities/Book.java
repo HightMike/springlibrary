@@ -60,8 +60,6 @@ public class Book {
 
     private String isbn;
 
-
-
     @ManyToOne
     @JoinColumn
     private Genre genre;

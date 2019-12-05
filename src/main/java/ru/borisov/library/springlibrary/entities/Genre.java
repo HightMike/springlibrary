@@ -29,6 +29,9 @@ public class Genre {
     @OneToMany(mappedBy = "genre")
     private List<Book> books;
 
+    public String getName() {
+        return name;
+    }
 
     @Override
     public String toString() {

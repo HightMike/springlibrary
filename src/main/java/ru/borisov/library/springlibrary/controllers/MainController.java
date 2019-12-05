@@ -34,8 +34,9 @@ public class MainController {
 
         //Page<Author> authorPage = authorService.getPageList("д", PageRequest.of(0,10, Sort.Direction.ASC, "fio"));
 
-        Page<Book> bookPage = bookService.geBookListWK(PageRequest.of(0,10, Sort.Direction.ASC, "name"));
+//        Page<Book> bookPage = bookService.geBookListWK(PageRequest.of(0,10, Sort.Direction.ASC, "name"));
 
+        Page<Book> bookPage = bookService.getBookRepository().findByGenre(15,PageRequest.of(0,10, Sort.Direction.ASC, "name"));
         return "ok";
 
     }

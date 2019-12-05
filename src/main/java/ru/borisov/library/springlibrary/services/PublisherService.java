@@ -1,6 +1,8 @@
 package ru.borisov.library.springlibrary.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.borisov.library.springlibrary.entities.Publisher;
 import ru.borisov.library.springlibrary.entities.Genre;
@@ -46,4 +48,18 @@ public class PublisherService implements BasicService<Publisher>{
         return publisherRepository.findByNameContainingIgnoreCaseOrderByName(name);
     }
 
+    @Override
+    public List<Publisher> getAll(Sort sort) {
+        return null;
+    }
+
+    @Override
+    public Page<Publisher> getAll(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection) {
+        return null;
+    }
+
+    @Override
+    public Page<Publisher> search(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection, String... searchString) {
+        return null;
+    }
 }

@@ -1,6 +1,8 @@
 package ru.borisov.library.springlibrary.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import ru.borisov.library.springlibrary.entities.Author;
 import ru.borisov.library.springlibrary.entities.Genre;
 import ru.borisov.library.springlibrary.repositories.GenreRepository;
@@ -33,6 +35,21 @@ public class GenreService implements BasicService<Genre> {
 
     @Override
     public Genre save(Genre obj) {
+        return null;
+    }
+
+    @Override
+    public List<Genre> getAll(Sort sort) {
+        return null;
+    }
+
+    @Override
+    public Page<Genre> getAll(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection) {
+        return null;
+    }
+
+    @Override
+    public Page<Genre> search(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection, String... searchString) {
         return null;
     }
 
